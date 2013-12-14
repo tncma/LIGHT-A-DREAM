@@ -1,0 +1,2 @@
+class Dreamer
+end
