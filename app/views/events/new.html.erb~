@@ -1,0 +1,17 @@
+<%= form_for @event do |u| %>
+  <%= devise_error_messages! %>
+
+  <div><%= u.label :username %><br />
+  <%= u.text_field :username, :autofocus => true %></div>
+
+  <div><%= u.label :email %><br />
+  <%= u.email_field :email %></div>
+
+  <div><%= u.label :password %><br />
+  <%= u.password_field :password %></div>
+
+  <div><%= u.label :password_confirmation %><br />
+  <%= u.password_field :password_confirmation %></div>
+
+  <div><%= u.submit "Sign up" %></div>
+<% end %>

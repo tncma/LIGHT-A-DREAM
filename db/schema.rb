@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131214134851) do
+ActiveRecord::Schema.define(:version => 20131214221633) do
 
   create_table "dreamer_profiles", :force => true do |t|
     t.string   "category"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(:version => 20131214134851) do
     t.datetime "eventend"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "ladder_id"
+    t.string   "integer"
   end
 
   create_table "ladder_profiles", :force => true do |t|

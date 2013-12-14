@@ -1,7 +1,5 @@
 class HomeController < ApplicationController
+  before_filter :authenticate_user!
   def new
-    if current_user==nil
-      redirect_to user_session_path
-    end
   end
 end

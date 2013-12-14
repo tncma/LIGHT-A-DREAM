@@ -6,12 +6,12 @@ class LadderProfilesController < ApplicationController
   end
 
   def create
-      lp=ladder_profile_params
-      @ladder_profile = LadderProfile.new(registration_no: lp[:registration_no],institution: lp[:institution])
+      
+      @ladder_profile = LadderProfile.new(ladder_profile_params)
     #      @ladder_profile = LadderProfile.new(registration_no: lp[:registration_no],institution: lp[:institution])
-    logger.debug lp[:username]
-    logger.debug lp[:email]
-      @user = User.new(username: lp[:username],:email => lp[:email],password: lp[:password],password_confirmation: lp[:password_confirmation])
+   
+      @user = User.new(user_params)
+    #   @user = User.new(username: lp[:username],:email => lp[:email],password: lp[:password],password_confirmation: lp[:password_confirmation])
     if @ladder_profile.save
       @user.profile =@ladder_profile
       @user.save!

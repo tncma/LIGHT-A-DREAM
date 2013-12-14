@@ -13,5 +13,5 @@ class User < ActiveRecord::Base
 
 
   # attr_accessible :title, :body
-
+  delegate :all_events ,to: :profile
 end

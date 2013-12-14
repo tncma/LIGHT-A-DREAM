@@ -1,0 +1,15 @@
+<%= form_for @event do |u| %>
+
+
+  <div><%= u.label :eventname %><br />
+  <%= u.text_field :eventname %></div>
+  <div><%= u.label :location %><br />
+  <%= u.text_field :location %></div>
+  <div><%= u.label :eventtype %><br />
+  <%= u.text_field :eventtype %></div>
+  <div><%= u.label :eventstart %><br />
+  <%= u.text_field :eventstart %></div>
+  <div><%= u.label :eventend %><br />
+  <%= u.text_field :eventend %></div>
+  <div><%= u.submit "Create Event" %></div>
+<% end %>

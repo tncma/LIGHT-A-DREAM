@@ -1,6 +1,13 @@
 <h1>Home#new</h1>
 <p>
 
- <%= current_user.email %>
-
+<%= link_to "Create New Event", :controller => "events", :action => "new" %>
+<h2>All Events</h2>
+<% current_user.all_events.each do |event|%>
+<div>
+<h3><%= link_to event.eventname, :controller => "events" %>
+</h3>
+<%= event.location %>
+</div>
+<% end %>
 </p>
