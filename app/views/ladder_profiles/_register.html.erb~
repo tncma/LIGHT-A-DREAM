@@ -1,0 +1,5 @@
+<% @ladder_profile = LadderProfile.new %>
+<%= form_for @ladder_profile do |f| %>
+<%= render 'fields', f: f %>
+<div><%= f.submit "Sign up" %></div>
+<% end %>

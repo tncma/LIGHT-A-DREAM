@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131214104617) do
+ActiveRecord::Schema.define(:version => 20131214134851) do
+
+  create_table "dreamer_profiles", :force => true do |t|
+    t.string   "category"
+    t.string   "institution"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "events", :force => true do |t|
     t.string   "eventname"
@@ -19,6 +26,20 @@ ActiveRecord::Schema.define(:version => 20131214104617) do
     t.string   "eventtype"
     t.datetime "eventstart"
     t.datetime "eventend"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "ladder_profiles", :force => true do |t|
+    t.string   "registration_no"
+    t.string   "institution"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "registrations", :force => true do |t|
+    t.integer  "event_id"
+    t.integer  "dreamer_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -37,7 +58,11 @@ ActiveRecord::Schema.define(:version => 20131214104617) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "username"
-    t.string   "type"
+    t.integer  "profile_id"
+    t.string   "profile_type"
+    t.integer  "mobile"
+    t.string   "gender"
+    t.string   "city"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

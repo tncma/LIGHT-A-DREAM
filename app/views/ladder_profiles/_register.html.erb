@@ -1,0 +1,14 @@
+<% @ladder_profile = LadderProfile.new %>
+<%= form_for @ladder_profile do |f| %>
+<div><%= f.label :registration_no %><br />
+  <%= f.text_field :registration_no %></div>
+
+  <div><%= f.label :username %><br />
+  <%= f.text_field :username, :autofocus => true %></div>
+
+
+
+
+  <div><%= f.submit "Sign up" %></div>
+
+<% end %>

@@ -1,0 +1,21 @@
+<h1>Ladders#new</h1>
+<p>Find me in app/views/ladders/new.html.erb</p>
+<%= form_for @ladder_profile do |f| %>
+  <div><%= f.label :username %><br />
+  <%= f.text_field :username, :autofocus => true %></div>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+
+<div><%= f.label :registration_no %><br />
+  <%= f.text_field :registration_no %></div
+<div><%= f.label :institution %><br />
+  <%= f.text_field :institution %></div>
+  <div><%= f.submit "Sign up" %></div>
+<% end %>

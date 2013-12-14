@@ -1,0 +1,16 @@
+class LadderprofilesController < ApplicationController
+  def new
+    @ladder_profile  = LadderProfile.new
+    @user = @ladder_profile.build_user
+  end
+
+  def create
+    @ladder_profile = LadderProfile.new(params[:ladderprofile])
+    if @ladder_profile.save
+      redirect_to root_url, :notice => "Signed in as Ladder!"
+    else
+      render "sign_in"
+    end
+  end
+end
+
