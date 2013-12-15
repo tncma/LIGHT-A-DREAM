@@ -10,7 +10,7 @@ Team Members
 2. Raj Bharath Kannan
 3. Kritika Govind
 
-Presentation Link: http://prezi.com/tx5ve-_v8826/dream/?utm_campaign=share&utm_medium=copy
+Presentation Link: http://prezi.com/lp8a_yyldtjh/light-a-dream/?utm_campaign=share&utm_medium=copy
 
 Phase 1: Introduction
 =====================
