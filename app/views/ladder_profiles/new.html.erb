@@ -1,3 +1,4 @@
+<div>
 <h1>Ladders Registration</h1>
 
 <%= form_for @ladder_profile do |f| %>
@@ -17,5 +18,8 @@
   <%= f.text_field :registration_no %></div
 <div><%= f.label :institution %><br />
   <%= f.text_field :institution %></div>
-  <div><%= f.submit "Sign up" %></div>
+<div >
+<%= f.submit "Sign up" , :class => "small button radius" %>
+</div>
 <% end %>
+</div>
