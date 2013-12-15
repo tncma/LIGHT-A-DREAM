@@ -39,3 +39,4 @@ gem 'debugger'
 gem 'devise'
 
 gem 'strong_parameters'
+gem 'foundation-rails'

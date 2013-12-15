@@ -15,9 +15,10 @@ class LadderProfilesController < ApplicationController
     if @ladder_profile.save
       @user.profile =@ladder_profile
       @user.save!
-      redirect_to root_url, :notice => "Signed in as Ladder!"
+      flash[:success] =  "Login Successful!"
+      redirect_to root_url 
     else
-      render "sign_in"
+      render "sign_in" ,:notice => "Invalid credentials!"
     end
   end
 

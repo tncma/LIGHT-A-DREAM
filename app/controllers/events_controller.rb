@@ -10,6 +10,7 @@ class EventsController < ApplicationController
       @event.ladder_id = current_user.id
       if @event.save!
         redirect_to root_url
+      
       end
     end
   end
@@ -32,4 +33,9 @@ class EventsController < ApplicationController
     end  
     redirect_to root_url
   end
+
+   def event_params
+     params.require(:event).permit(:eventname,:location,:eventstart,:eventend,:eventtype)
+   end
+
 end

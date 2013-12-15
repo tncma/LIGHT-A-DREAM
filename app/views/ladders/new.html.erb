@@ -1,9 +1,12 @@
 <h1>Ladders#new</h1>
-<p>Find me in app/views/ladders/new.html.erb</p>
+
 <% @ladder = LadderProfile.new %>
 <%= form_for @ladder do |f| %>
-
-
+<div>
+  <% @ladder.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+</div>
   <div><%= f.label :username %><br />
   <%= f.text_field :username, :autofocus => true %></div>
 

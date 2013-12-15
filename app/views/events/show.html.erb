@@ -15,7 +15,9 @@
 <% else %>
 <%= link_to "Update Results", :controller => "events" , action: "edit" , :id => @event.id %>
 <% end %>
+
 <%= link_to "Leader Board", :controller => "events", action: "index" , :id => @event.id %>
+</p>
 </h4>
 </div>
 

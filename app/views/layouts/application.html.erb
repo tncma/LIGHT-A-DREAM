@@ -1,23 +1,67 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Testdevise</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<div id="user_nav">
-    <% if user_signed_in? %>
-        Signed in as <%= current_user.email %>.
-        <%= link_to 'Home', root_url %>
- Not you?
-        <%= link_to 'Sign out', destroy_user_session_path,:method => :delete %>
-    <% else %>
-        <%= link_to 'Register', new_user_registration_path %> or <%= link_to 'Sign in', new_user_session_path %>
-    <% end %>
-</div>
-<%= yield %>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-</body>
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <nav class="top-bar">
+      <ul class="title-area">
+        <li class="name">
+          <h1><%= link_to "Light A Dream", root_url %></a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="right">
+          <li class="divider"></li>
+          
+	    <% if user_signed_in? %>
+          <li><%= link_to  current_user.email %></li>
+	  
+          <li class="divider"></li>
+	  <li> <%= link_to 'Home', root_url %></li>
+          <li class="divider"></li>
+          <li><%= link_to 'Sign out', destroy_user_session_path,:method => :delete %></li>
+          <li class="divider"></li>
+	<% else %>
+	  <li>
+	    <%= link_to 'Register', new_user_registration_path %> </li> 
+
+	  <li>or</li>
+
+	  <li>
+	  <%= link_to 'Sign in', new_user_session_path %>
+	  </li>
+	<% end %>
+	 
+          <li class="divider"></li>
+          
+        </ul>
+      </div>
+    </nav>
+
+<div class="row"><p></p></div>
+    <div class ="row">
+      <div class="large-4 columns">
+	 <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+	<% end %>
+	<%= yield %>
+      </div>
+      <div class="large-6 columns">
+	<h2>About Us</h2>
+	Many people gifted with talent sports in India are not really aware of it. Even if they were aware of it, they still find it difficult to make a living out of it. So they move out of what they really dream of and make a normal living. Countries like Jamaica, New Zealand who are very less in numbers are shining big in Olympics. Even though we as a country we find it difficult to count the number of people we find it easier to count the medals we win in International events.
+</p>
+We, as a country are not in short of talents but many are not recognised. We intend to wipe off their helplessness by bringing them to limelight and in the process make our nation proud.
+      </div>
+    </div>
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>
