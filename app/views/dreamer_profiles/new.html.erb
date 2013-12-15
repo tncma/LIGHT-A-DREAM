@@ -1,5 +1,6 @@
-<% @ladder_profile = LadderProfile.new %>
-<%= form_for @ladder_profile do |f| %>
+<h1>Dreamer Registration</h1>
+
+<%= form_for @dreamer_profile do |f| %>
   <div><%= f.label :username %><br />
   <%= f.text_field :username, :autofocus => true %></div>
 
@@ -12,8 +13,8 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
-<div><%= f.label :registration_no %><br />
-  <%= f.text_field :registration_no %></div
+<div><%= f.label :category %><br />
+  <%= f.text_field :category %></div
 <div><%= f.label :institution %><br />
   <%= f.text_field :institution %></div>
   <div><%= f.submit "Sign up" %></div>

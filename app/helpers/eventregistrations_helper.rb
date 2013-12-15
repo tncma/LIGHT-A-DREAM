@@ -1,0 +1,2 @@
+module EventregistrationsHelper
+end

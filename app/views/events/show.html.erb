@@ -7,7 +7,10 @@
 </h4>
 <% else %>
  <b><%= attribute.humanize %> : </b>
- <%= @event.attributes[attribute].to_s %></div>
+ <%= @event.attributes[attribute].to_s %> &nbsp; 
+<%= link_to "Register", :controller => "dreamer_profiles" , action: "show" , :id => @event.id %>
+
+</div>
 <% end %>
 <% end %>
 

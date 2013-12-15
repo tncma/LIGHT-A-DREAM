@@ -1,7 +1,7 @@
-<h1>Home#new</h1>
 <p>
-
+<% if current_user.profile_type == "LadderProfile" %>
 <%= link_to "Create New Event", :controller => "events", :action => "new" %>
+<% end %>
 <h2>All Events</h2>
 <% current_user.all_events.each do |event|%>
 <div>
