@@ -1,0 +1,4 @@
+<h1><% for attribute in @event.attributes.keys %>
+  <p><%= attribute.humanize %> <%= @event.attributes[attribute].to_s %></p>
+<% end %>
+</h1>

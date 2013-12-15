@@ -5,8 +5,7 @@
 <h2>All Events</h2>
 <% current_user.all_events.each do |event|%>
 <div>
-<h3><%= link_to event.eventname, :controller => "events" %>
-</h3>
+<h3><%= link_to event.eventname, :controller => "events", action: "show" , id: event.id %></h3>
 <%= event.location %>
 </div>
 <% end %>

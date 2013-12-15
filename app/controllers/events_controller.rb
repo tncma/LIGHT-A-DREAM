@@ -13,4 +13,8 @@ class EventsController < ApplicationController
       end
     end
   end
+
+  def show
+    @event = Event.find_by_id(params[:id])
+  end
 end
