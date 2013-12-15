@@ -1,0 +1,26 @@
+
+<%= form_for @event do |u| %>
+  <div><%= u.label :eventname %><br />
+  <%= u.text_field :eventname %></div>
+  <div><%= u.label :location %><br />
+  <%= u.text_field :location %></div>
+  <div><%= u.label :eventtype %><br />
+  <%= u.text_field :eventtype %></div>
+  <div><%= u.label :eventstart %><br />
+  <%= u.text_field :eventstart %></div>
+  <div><%= u.label :eventend %><br />
+  <%= u.text_field :eventend %></div>
+
+  <div><%= u.submit "Update Event Status" %></div>
+<% end %>
+<% @event.all_participants.each do |e| %>
+  <div>
+    <%= User.find_by_profile_id(e.dreamer_profile_id).username %>
+    <%= form_for e do |u| %>
+    <%= u.label :points %><br />
+    <%= u.text_field :points %>
+    <div><%= u.submit "Update Results" %></div>
+    <% end %>
+  </div>
+<% end %>
+

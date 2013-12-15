@@ -17,4 +17,19 @@ class EventsController < ApplicationController
   def show
     @event = Event.find_by_id(params[:id])
   end
+
+  def edit
+    @event = Event.find_by_id(params[:id])
+  end
+
+  def index
+  end  
+
+  def update
+    @event = Event.find_by_id(params[:id])
+    @event.all_participants.each do |e|
+      e.save
+    end  
+    redirect_to root_url
+  end
 end

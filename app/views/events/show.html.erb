@@ -5,14 +5,17 @@
  <%= attribute.humanize %> : 
  <%= @event.attributes[attribute].to_s %>
 
-
+<% if current_user.profile_type.to_s == "DreamerProfile" %>
 <% if current_user.isRegistered?(@event)  %>
 <% logger.debug current_user.isRegistered?(@event) %>
 <h3>All the Best!</h3>
 <% else %>
 <%= link_to "Register", :controller => "dreamer_profiles" , action: "show" , :id => @event.id %>
 <% end %>
-
+<% else %>
+<%= link_to "Update Results", :controller => "events" , action: "edit" , :id => @event.id %>
+<% end %>
+<%= link_to "Leader Board", :controller => "events", action: "index" , :id => @event.id %>
 </h4>
 </div>
 
