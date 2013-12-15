@@ -20,6 +20,7 @@ class DreamerProfilesController < ApplicationController
   def show
     event = Event.find_by_id(params[:id])
     current_user.addevent(event)
+    redirect_to root_url
   end
 
   private

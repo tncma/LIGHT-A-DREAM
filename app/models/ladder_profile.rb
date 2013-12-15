@@ -10,4 +10,5 @@ class LadderProfile < ActiveRecord::Base
     Event.find(:all,:conditions => ["ladder_id in (?)",user.id],:order => "created_at desc")
   end
 
+
 end

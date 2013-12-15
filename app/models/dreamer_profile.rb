@@ -11,12 +11,20 @@ class DreamerProfile < ActiveRecord::Base
   end
 
   def isRegistered?(event)
-    EventRegistration.where(event_id: :event.id,dreamer_id: user.id)
+    if  Eventregistration.where(event_id: event.id,dreamer_profile_id: user.profile_id).empty?
+      false
+    else
+      true
+     end
   end
 
   def addevent(event)
-     eventregistration = eventregistrations.build(event_id: event.id)
-    if eventregistration.save!
+    if !isRegistered?(event)
+      eventregistration = eventregistrations.build(event_id: event.id)
+      if eventregistration.save!
+        logger.debug "already added"
+      end
+    else
       logger.debug "already added"
     end
   end

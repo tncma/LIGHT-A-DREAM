@@ -3,12 +3,23 @@
    <% if attribute.humanize == "Eventname" %>
 <h4>
  <%= attribute.humanize %> : 
- <%= @event.attributes[attribute].to_s %></div>
+ <%= @event.attributes[attribute].to_s %>
+
+
+<% if current_user.isRegistered?(@event)  %>
+<% logger.debug current_user.isRegistered?(@event) %>
+<h3>All the Best!</h3>
+<% else %>
+<%= link_to "Register", :controller => "dreamer_profiles" , action: "show" , :id => @event.id %>
+<% end %>
+
 </h4>
+</div>
+
 <% else %>
  <b><%= attribute.humanize %> : </b>
  <%= @event.attributes[attribute].to_s %> &nbsp; 
-<%= link_to "Register", :controller => "dreamer_profiles" , action: "show" , :id => @event.id %>
+
 
 </div>
 <% end %>

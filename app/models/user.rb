@@ -13,5 +13,5 @@ class User < ActiveRecord::Base
 
 
   # attr_accessible :title, :body
-  delegate :all_events ,:addevent, to: :profile
+  delegate :all_events ,:addevent,:isRegistered?, to: :profile
 end
