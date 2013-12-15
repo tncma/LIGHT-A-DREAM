@@ -1,11 +1,11 @@
 Light a Dream
-#############
+=============
 Many people gifted with talent sports in India are not really aware of it. Even if they were aware of it, they still find it difficult to make a living out of it. So they move out of what they really dream of and make a normal living. Countries like Jamaica, New Zealand who are very less in numbers are shining big in Olympics. Even though we as a country we find it difficult to count the number of people we find it easier to count the medals we win in International events.
 
 We, as a country are not in short of talents but many are not recognised. We intend to wipe off their helplessness by bringing them to limelight and in the process make our nation proud.
 
 Team Members
-============
+-------------
 1. Prabu Karuppiah
 2. Raj Bharath Kannan
 3. Kritika Govind
